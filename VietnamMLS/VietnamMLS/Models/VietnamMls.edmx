@@ -1,0 +1,1541 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Models.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+        <EntityContainer Name="ModelsStoreContainer">
+          <EntitySet Name="aspnet_Membership" EntityType="Models.Store.aspnet_Membership" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="aspnet_Roles" EntityType="Models.Store.aspnet_Roles" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="aspnet_Users" EntityType="Models.Store.aspnet_Users" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="aspnet_UsersInRoles" EntityType="Models.Store.aspnet_UsersInRoles" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Categories" EntityType="Models.Store.Categories" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Cities" EntityType="Models.Store.Cities" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CitiesInHome" EntityType="Models.Store.CitiesInHome" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Countries" EntityType="Models.Store.Countries" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Languages" EntityType="Models.Store.Languages" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="LocalizedCategories" EntityType="Models.Store.LocalizedCategories" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="LocalizedCities" EntityType="Models.Store.LocalizedCities" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="LocalizedNews" EntityType="Models.Store.LocalizedNews" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="LocalizedParentCategories" EntityType="Models.Store.LocalizedParentCategories" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="News" EntityType="Models.Store.News" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ParentCategories" EntityType="Models.Store.ParentCategories" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PromotedNews" EntityType="Models.Store.PromotedNews" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Roles" EntityType="Models.Store.Roles" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Users" EntityType="Models.Store.Users" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK__aspnet_Me__UserI__4CA06362" Association="Models.Store.FK__aspnet_Me__UserI__4CA06362">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Us__RoleI__6EF57B66" Association="Models.Store.FK__aspnet_Us__RoleI__6EF57B66">
+            <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+            <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Us__UserI__6E01572D" Association="Models.Store.FK__aspnet_Us__UserI__6E01572D">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Categorie__Paren__1ED998B2" Association="Models.Store.FK__Categorie__Paren__1ED998B2">
+            <End Role="ParentCategories" EntitySet="ParentCategories" />
+            <End Role="Categories" EntitySet="Categories" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Cities__CountryI__0AD2A005" Association="Models.Store.FK__Cities__CountryI__0AD2A005">
+            <End Role="Countries" EntitySet="Countries" />
+            <End Role="Cities" EntitySet="Cities" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CitiesInH__CityI__0EA330E9" Association="Models.Store.FK__CitiesInH__CityI__0EA330E9">
+            <End Role="Cities" EntitySet="Cities" />
+            <End Role="CitiesInHome" EntitySet="CitiesInHome" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Localized__Categ__21B6055D" Association="Models.Store.FK__Localized__Categ__21B6055D">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="LocalizedCategories" EntitySet="LocalizedCategories" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Localized__CityI__117F9D94" Association="Models.Store.FK__Localized__CityI__117F9D94">
+            <End Role="Cities" EntitySet="Cities" />
+            <End Role="LocalizedCities" EntitySet="LocalizedCities" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Localized__Langu__1273C1CD" Association="Models.Store.FK__Localized__Langu__1273C1CD">
+            <End Role="Languages" EntitySet="Languages" />
+            <End Role="LocalizedCities" EntitySet="LocalizedCities" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Localized__Langu__1A14E395" Association="Models.Store.FK__Localized__Langu__1A14E395">
+            <End Role="Languages" EntitySet="Languages" />
+            <End Role="LocalizedParentCategories" EntitySet="LocalizedParentCategories" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Localized__Langu__22AA2996" Association="Models.Store.FK__Localized__Langu__22AA2996">
+            <End Role="Languages" EntitySet="Languages" />
+            <End Role="LocalizedCategories" EntitySet="LocalizedCategories" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Localized__Langu__2E1BDC42" Association="Models.Store.FK__Localized__Langu__2E1BDC42">
+            <End Role="Languages" EntitySet="Languages" />
+            <End Role="LocalizedNews" EntitySet="LocalizedNews" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Localized__NewsI__2D27B809" Association="Models.Store.FK__Localized__NewsI__2D27B809">
+            <End Role="News" EntitySet="News" />
+            <End Role="LocalizedNews" EntitySet="LocalizedNews" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Localized__Paren__1920BF5C" Association="Models.Store.FK__Localized__Paren__1920BF5C">
+            <End Role="ParentCategories" EntitySet="ParentCategories" />
+            <End Role="LocalizedParentCategories" EntitySet="LocalizedParentCategories" />
+          </AssociationSet>
+          <AssociationSet Name="FK__News__CategoryID__276EDEB3" Association="Models.Store.FK__News__CategoryID__276EDEB3">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="News" EntitySet="News" />
+          </AssociationSet>
+          <AssociationSet Name="FK__News__CityID__2A4B4B5E" Association="Models.Store.FK__News__CityID__2A4B4B5E">
+            <End Role="Cities" EntitySet="Cities" />
+            <End Role="News" EntitySet="News" />
+          </AssociationSet>
+          <AssociationSet Name="FK__News__ParentCate__29572725" Association="Models.Store.FK__News__ParentCate__29572725">
+            <End Role="ParentCategories" EntitySet="ParentCategories" />
+            <End Role="News" EntitySet="News" />
+          </AssociationSet>
+          <AssociationSet Name="FK__News__UserID__286302EC" Association="Models.Store.FK__News__UserID__286302EC">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="News" EntitySet="News" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ParentCat__CityI__164452B1" Association="Models.Store.FK__ParentCat__CityI__164452B1">
+            <End Role="Cities" EntitySet="Cities" />
+            <End Role="ParentCategories" EntitySet="ParentCategories" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PromotedN__NewsI__31EC6D26" Association="Models.Store.FK__PromotedN__NewsI__31EC6D26">
+            <End Role="News" EntitySet="News" />
+            <End Role="PromotedNews" EntitySet="PromotedNews" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Users__RoleID__03317E3D" Association="Models.Store.FK__Users__RoleID__03317E3D">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="aspnet_Membership">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="PasswordFormat" Type="int" Nullable="false" />
+          <Property Name="PasswordSalt" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="MobilePIN" Type="nvarchar" MaxLength="16" />
+          <Property Name="Email" Type="nvarchar" MaxLength="256" />
+          <Property Name="LoweredEmail" Type="nvarchar" MaxLength="256" />
+          <Property Name="PasswordQuestion" Type="nvarchar" MaxLength="256" />
+          <Property Name="PasswordAnswer" Type="nvarchar" MaxLength="128" />
+          <Property Name="IsApproved" Type="bit" Nullable="false" />
+          <Property Name="IsLockedOut" Type="bit" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="LastLoginDate" Type="datetime" Nullable="false" />
+          <Property Name="LastPasswordChangedDate" Type="datetime" Nullable="false" />
+          <Property Name="LastLockoutDate" Type="datetime" Nullable="false" />
+          <Property Name="FailedPasswordAttemptCount" Type="int" Nullable="false" />
+          <Property Name="FailedPasswordAttemptWindowStart" Type="datetime" Nullable="false" />
+          <Property Name="FailedPasswordAnswerAttemptCount" Type="int" Nullable="false" />
+          <Property Name="FailedPasswordAnswerAttemptWindowStart" Type="datetime" Nullable="false" />
+          <Property Name="Comment" Type="ntext" />
+        </EntityType>
+        <EntityType Name="aspnet_Roles">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RoleName" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="LoweredRoleName" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="Description" Type="nvarchar" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="aspnet_Users">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="LoweredUserName" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="MobileAlias" Type="nvarchar" MaxLength="16" />
+          <Property Name="IsAnonymous" Type="bit" Nullable="false" />
+          <Property Name="LastActivityDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="aspnet_UsersInRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Categories">
+          <Key>
+            <PropertyRef Name="CategoryID" />
+          </Key>
+          <Property Name="CategoryID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="nvarchar" MaxLength="100" />
+          <Property Name="IsUsed" Type="bit" />
+          <Property Name="ParentCategoryID" Type="int" />
+          <Property Name="DefaultImage" Type="varchar" MaxLength="50" />
+          <Property Name="SortOrder" Type="int" />
+        </EntityType>
+        <EntityType Name="Cities">
+          <Key>
+            <PropertyRef Name="CityID" />
+          </Key>
+          <Property Name="CityID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" />
+          <Property Name="CountryID" Type="int" />
+          <Property Name="IsUsed" Type="bit" />
+        </EntityType>
+        <EntityType Name="CitiesInHome">
+          <Key>
+            <PropertyRef Name="CityID" />
+          </Key>
+          <Property Name="CityID" Type="int" Nullable="false" />
+          <Property Name="IsDefault" Type="bit" />
+          <Property Name="SortOrder" Type="int" />
+        </EntityType>
+        <EntityType Name="Countries">
+          <Key>
+            <PropertyRef Name="CountryID" />
+          </Key>
+          <Property Name="CountryID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="IsUsed" Type="bit" />
+        </EntityType>
+        <EntityType Name="Languages">
+          <Key>
+            <PropertyRef Name="LanguageID" />
+          </Key>
+          <Property Name="LanguageID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="LanguageCode" Type="varchar" Nullable="false" MaxLength="4" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Flag" Type="varchar" MaxLength="50" />
+          <Property Name="IsUsed" Type="bit" />
+          <Property Name="SortOrder" Type="int" />
+        </EntityType>
+        <EntityType Name="LocalizedCategories">
+          <Key>
+            <PropertyRef Name="CategoryID" />
+            <PropertyRef Name="LanguageID" />
+          </Key>
+          <Property Name="CategoryID" Type="int" Nullable="false" />
+          <Property Name="LanguageID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="SEOUrl" Type="varchar" MaxLength="255" />
+          <Property Name="SEOKeyword" Type="varchar" MaxLength="255" />
+          <Property Name="SEODescription" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="LocalizedCities">
+          <Key>
+            <PropertyRef Name="CityID" />
+            <PropertyRef Name="LanguageID" />
+          </Key>
+          <Property Name="CityID" Type="int" Nullable="false" />
+          <Property Name="LanguageID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="SEOUrl" Type="varchar" MaxLength="255" />
+          <Property Name="SEOKeyword" Type="varchar" MaxLength="255" />
+          <Property Name="SEODescription" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="LocalizedNews">
+          <Key>
+            <PropertyRef Name="NewsID" />
+            <PropertyRef Name="LanguageID" />
+          </Key>
+          <Property Name="NewsID" Type="int" Nullable="false" />
+          <Property Name="LanguageID" Type="int" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="300" />
+          <Property Name="FullContent" Type="nvarchar(max)" />
+          <Property Name="SEOUrl" Type="varchar" MaxLength="255" />
+          <Property Name="SEOKeyword" Type="varchar" MaxLength="255" />
+          <Property Name="SEODescription" Type="varchar" MaxLength="255" />
+          <Property Name="Tags" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="LocalizedParentCategories">
+          <Key>
+            <PropertyRef Name="ParentCategoryID" />
+            <PropertyRef Name="LanguageID" />
+          </Key>
+          <Property Name="ParentCategoryID" Type="int" Nullable="false" />
+          <Property Name="LanguageID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="SEOUrl" Type="varchar" MaxLength="255" />
+          <Property Name="SEOKeyword" Type="varchar" MaxLength="255" />
+          <Property Name="SEODescription" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="News">
+          <Key>
+            <PropertyRef Name="NewsId" />
+          </Key>
+          <Property Name="NewsId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PostedDate" Type="smalldatetime" />
+          <Property Name="CategoryID" Type="int" />
+          <Property Name="IsApproved" Type="bit" />
+          <Property Name="MainImage" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="CreatedDate" Type="smalldatetime" />
+          <Property Name="ParentCategoryID" Type="int" />
+          <Property Name="CityID" Type="int" />
+        </EntityType>
+        <EntityType Name="ParentCategories">
+          <Key>
+            <PropertyRef Name="ParentCategoryID" />
+          </Key>
+          <Property Name="ParentCategoryID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="nvarchar" MaxLength="100" />
+          <Property Name="CityID" Type="int" />
+          <Property Name="IsUsed" Type="bit" />
+          <Property Name="SortOrder" Type="int" />
+        </EntityType>
+        <EntityType Name="PromotedNews">
+          <Key>
+            <PropertyRef Name="NewsID" />
+          </Key>
+          <Property Name="NewsID" Type="int" Nullable="false" />
+          <Property Name="StartedDate" Type="smalldatetime" Nullable="false" />
+          <Property Name="EndedDate" Type="smalldatetime" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="300" />
+          <Property Name="IsUsed" Type="bit" />
+          <Property Name="LevelID" Type="int" />
+        </EntityType>
+        <EntityType Name="Roles">
+          <Key>
+            <PropertyRef Name="RoleID" />
+          </Key>
+          <Property Name="RoleID" Type="int" Nullable="false" />
+          <Property Name="RoleName" Type="varchar" Nullable="false" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="varchar" Nullable="false" MaxLength="16" />
+          <Property Name="Password" Type="varchar" Nullable="false" MaxLength="16" />
+          <Property Name="Email" Type="varchar" MaxLength="30" />
+          <Property Name="RoleID" Type="int" />
+        </EntityType>
+        <Association Name="FK__aspnet_Me__UserI__4CA06362">
+          <End Role="aspnet_Users" Type="Models.Store.aspnet_Users" Multiplicity="1" />
+          <End Role="aspnet_Membership" Type="Models.Store.aspnet_Membership" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="aspnet_Membership">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Us__RoleI__6EF57B66">
+          <End Role="aspnet_Roles" Type="Models.Store.aspnet_Roles" Multiplicity="1" />
+          <End Role="aspnet_UsersInRoles" Type="Models.Store.aspnet_UsersInRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Roles">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="aspnet_UsersInRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Us__UserI__6E01572D">
+          <End Role="aspnet_Users" Type="Models.Store.aspnet_Users" Multiplicity="1" />
+          <End Role="aspnet_UsersInRoles" Type="Models.Store.aspnet_UsersInRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="aspnet_UsersInRoles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Categorie__Paren__1ED998B2">
+          <End Role="ParentCategories" Type="Models.Store.ParentCategories" Multiplicity="0..1" />
+          <End Role="Categories" Type="Models.Store.Categories" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ParentCategories">
+              <PropertyRef Name="ParentCategoryID" />
+            </Principal>
+            <Dependent Role="Categories">
+              <PropertyRef Name="ParentCategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Cities__CountryI__0AD2A005">
+          <End Role="Countries" Type="Models.Store.Countries" Multiplicity="0..1" />
+          <End Role="Cities" Type="Models.Store.Cities" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Countries">
+              <PropertyRef Name="CountryID" />
+            </Principal>
+            <Dependent Role="Cities">
+              <PropertyRef Name="CountryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CitiesInH__CityI__0EA330E9">
+          <End Role="Cities" Type="Models.Store.Cities" Multiplicity="1" />
+          <End Role="CitiesInHome" Type="Models.Store.CitiesInHome" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Cities">
+              <PropertyRef Name="CityID" />
+            </Principal>
+            <Dependent Role="CitiesInHome">
+              <PropertyRef Name="CityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Localized__Categ__21B6055D">
+          <End Role="Categories" Type="Models.Store.Categories" Multiplicity="1" />
+          <End Role="LocalizedCategories" Type="Models.Store.LocalizedCategories" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="CategoryID" />
+            </Principal>
+            <Dependent Role="LocalizedCategories">
+              <PropertyRef Name="CategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Localized__CityI__117F9D94">
+          <End Role="Cities" Type="Models.Store.Cities" Multiplicity="1" />
+          <End Role="LocalizedCities" Type="Models.Store.LocalizedCities" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cities">
+              <PropertyRef Name="CityID" />
+            </Principal>
+            <Dependent Role="LocalizedCities">
+              <PropertyRef Name="CityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Localized__Langu__1273C1CD">
+          <End Role="Languages" Type="Models.Store.Languages" Multiplicity="1" />
+          <End Role="LocalizedCities" Type="Models.Store.LocalizedCities" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Languages">
+              <PropertyRef Name="LanguageID" />
+            </Principal>
+            <Dependent Role="LocalizedCities">
+              <PropertyRef Name="LanguageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Localized__Langu__1A14E395">
+          <End Role="Languages" Type="Models.Store.Languages" Multiplicity="1" />
+          <End Role="LocalizedParentCategories" Type="Models.Store.LocalizedParentCategories" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Languages">
+              <PropertyRef Name="LanguageID" />
+            </Principal>
+            <Dependent Role="LocalizedParentCategories">
+              <PropertyRef Name="LanguageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Localized__Langu__22AA2996">
+          <End Role="Languages" Type="Models.Store.Languages" Multiplicity="1" />
+          <End Role="LocalizedCategories" Type="Models.Store.LocalizedCategories" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Languages">
+              <PropertyRef Name="LanguageID" />
+            </Principal>
+            <Dependent Role="LocalizedCategories">
+              <PropertyRef Name="LanguageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Localized__Langu__2E1BDC42">
+          <End Role="Languages" Type="Models.Store.Languages" Multiplicity="1" />
+          <End Role="LocalizedNews" Type="Models.Store.LocalizedNews" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Languages">
+              <PropertyRef Name="LanguageID" />
+            </Principal>
+            <Dependent Role="LocalizedNews">
+              <PropertyRef Name="LanguageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Localized__NewsI__2D27B809">
+          <End Role="News" Type="Models.Store.News" Multiplicity="1" />
+          <End Role="LocalizedNews" Type="Models.Store.LocalizedNews" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="News">
+              <PropertyRef Name="NewsId" />
+            </Principal>
+            <Dependent Role="LocalizedNews">
+              <PropertyRef Name="NewsID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Localized__Paren__1920BF5C">
+          <End Role="ParentCategories" Type="Models.Store.ParentCategories" Multiplicity="1" />
+          <End Role="LocalizedParentCategories" Type="Models.Store.LocalizedParentCategories" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ParentCategories">
+              <PropertyRef Name="ParentCategoryID" />
+            </Principal>
+            <Dependent Role="LocalizedParentCategories">
+              <PropertyRef Name="ParentCategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__News__CategoryID__276EDEB3">
+          <End Role="Categories" Type="Models.Store.Categories" Multiplicity="0..1" />
+          <End Role="News" Type="Models.Store.News" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="CategoryID" />
+            </Principal>
+            <Dependent Role="News">
+              <PropertyRef Name="CategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__News__CityID__2A4B4B5E">
+          <End Role="Cities" Type="Models.Store.Cities" Multiplicity="0..1" />
+          <End Role="News" Type="Models.Store.News" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cities">
+              <PropertyRef Name="CityID" />
+            </Principal>
+            <Dependent Role="News">
+              <PropertyRef Name="CityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__News__ParentCate__29572725">
+          <End Role="ParentCategories" Type="Models.Store.ParentCategories" Multiplicity="0..1" />
+          <End Role="News" Type="Models.Store.News" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ParentCategories">
+              <PropertyRef Name="ParentCategoryID" />
+            </Principal>
+            <Dependent Role="News">
+              <PropertyRef Name="ParentCategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__News__UserID__286302EC">
+          <End Role="Users" Type="Models.Store.Users" Multiplicity="0..1" />
+          <End Role="News" Type="Models.Store.News" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="News">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ParentCat__CityI__164452B1">
+          <End Role="Cities" Type="Models.Store.Cities" Multiplicity="0..1" />
+          <End Role="ParentCategories" Type="Models.Store.ParentCategories" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cities">
+              <PropertyRef Name="CityID" />
+            </Principal>
+            <Dependent Role="ParentCategories">
+              <PropertyRef Name="CityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PromotedN__NewsI__31EC6D26">
+          <End Role="News" Type="Models.Store.News" Multiplicity="1" />
+          <End Role="PromotedNews" Type="Models.Store.PromotedNews" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="News">
+              <PropertyRef Name="NewsId" />
+            </Principal>
+            <Dependent Role="PromotedNews">
+              <PropertyRef Name="NewsID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Users__RoleID__03317E3D">
+          <End Role="Roles" Type="Models.Store.Roles" Multiplicity="0..1" />
+          <End Role="Users" Type="Models.Store.Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="RoleID" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="RoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Models" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+        <EntityContainer Name="VietnamMLSEntities">
+          <EntitySet Name="Categories" EntityType="Models.Category" />
+          <EntitySet Name="Cities" EntityType="Models.City" />
+          <EntitySet Name="CitiesInHomes" EntityType="Models.CitiesInHome" />
+          <EntitySet Name="Countries" EntityType="Models.Country" />
+          <EntitySet Name="Languages" EntityType="Models.Language" />
+          <EntitySet Name="LocalizedCategories" EntityType="Models.LocalizedCategory" />
+          <EntitySet Name="LocalizedCities" EntityType="Models.LocalizedCity" />
+          <EntitySet Name="LocalizedNews" EntityType="Models.LocalizedNew" />
+          <EntitySet Name="LocalizedParentCategories" EntityType="Models.LocalizedParentCategory" />
+          <EntitySet Name="News" EntityType="Models.News" />
+          <EntitySet Name="ParentCategories" EntityType="Models.ParentCategory" />
+          <EntitySet Name="PromotedNews" EntityType="Models.PromotedNew" />
+          <EntitySet Name="Roles" EntityType="Models.Role" />
+          <EntitySet Name="Users" EntityType="Models.User" />
+          <AssociationSet Name="FK__Categorie__Paren__35BCFE0A" Association="Models.FK__Categorie__Paren__35BCFE0A">
+            <End Role="ParentCategories" EntitySet="ParentCategories" />
+            <End Role="Categories" EntitySet="Categories" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Localized__Categ__3A81B327" Association="Models.FK__Localized__Categ__3A81B327">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="LocalizedCategories" EntitySet="LocalizedCategories" />
+          </AssociationSet>
+          <AssociationSet Name="FK__News__CategoryID__4222D4EF" Association="Models.FK__News__CategoryID__4222D4EF">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="News" EntitySet="News" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Cities__CountryI__182C9B23" Association="Models.FK__Cities__CountryI__182C9B23">
+            <End Role="Countries" EntitySet="Countries" />
+            <End Role="Cities" EntitySet="Cities" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CitiesInH__CityI__1DE57479" Association="Models.FK__CitiesInH__CityI__1DE57479">
+            <End Role="Cities" EntitySet="Cities" />
+            <End Role="CitiesInHome" EntitySet="CitiesInHomes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Localized__CityI__22AA2996" Association="Models.FK__Localized__CityI__22AA2996">
+            <End Role="Cities" EntitySet="Cities" />
+            <End Role="LocalizedCities" EntitySet="LocalizedCities" />
+          </AssociationSet>
+          <AssociationSet Name="FK__News__CityID__44FF419A" Association="Models.FK__News__CityID__44FF419A">
+            <End Role="Cities" EntitySet="Cities" />
+            <End Role="News" EntitySet="News" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ParentCat__CityI__29572725" Association="Models.FK__ParentCat__CityI__29572725">
+            <End Role="Cities" EntitySet="Cities" />
+            <End Role="ParentCategories" EntitySet="ParentCategories" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Localized__Langu__239E4DCF" Association="Models.FK__Localized__Langu__239E4DCF">
+            <End Role="Languages" EntitySet="Languages" />
+            <End Role="LocalizedCities" EntitySet="LocalizedCities" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Localized__Langu__2F10007B" Association="Models.FK__Localized__Langu__2F10007B">
+            <End Role="Languages" EntitySet="Languages" />
+            <End Role="LocalizedParentCategories" EntitySet="LocalizedParentCategories" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Localized__Langu__3B75D760" Association="Models.FK__Localized__Langu__3B75D760">
+            <End Role="Languages" EntitySet="Languages" />
+            <End Role="LocalizedCategories" EntitySet="LocalizedCategories" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Localized__Langu__4AB81AF0" Association="Models.FK__Localized__Langu__4AB81AF0">
+            <End Role="Languages" EntitySet="Languages" />
+            <End Role="LocalizedNews" EntitySet="LocalizedNews" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Localized__NewsI__49C3F6B7" Association="Models.FK__Localized__NewsI__49C3F6B7">
+            <End Role="News" EntitySet="News" />
+            <End Role="LocalizedNews" EntitySet="LocalizedNews" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Localized__Paren__2E1BDC42" Association="Models.FK__Localized__Paren__2E1BDC42">
+            <End Role="ParentCategories" EntitySet="ParentCategories" />
+            <End Role="LocalizedParentCategories" EntitySet="LocalizedParentCategories" />
+          </AssociationSet>
+          <AssociationSet Name="FK__News__ParentCate__440B1D61" Association="Models.FK__News__ParentCate__440B1D61">
+            <End Role="ParentCategories" EntitySet="ParentCategories" />
+            <End Role="News" EntitySet="News" />
+          </AssociationSet>
+          <AssociationSet Name="FK__News__UserID__4316F928" Association="Models.FK__News__UserID__4316F928">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="News" EntitySet="News" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PromotedN__NewsI__5070F446" Association="Models.FK__PromotedN__NewsI__5070F446">
+            <End Role="News" EntitySet="News" />
+            <End Role="PromotedNews" EntitySet="PromotedNews" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Users__RoleID__0AD2A005" Association="Models.FK__Users__RoleID__0AD2A005">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+          <EntitySet Name="aspnet_Membership" EntityType="Models.aspnet_Membership" />
+          <EntitySet Name="aspnet_Roles" EntityType="Models.aspnet_Roles" />
+          <EntitySet Name="aspnet_Users" EntityType="Models.aspnet_Users" />
+          <AssociationSet Name="FK__aspnet_Me__UserI__4CA06362" Association="Models.FK__aspnet_Me__UserI__4CA06362">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="aspnet_Membership" EntitySet="aspnet_Membership" /></AssociationSet>
+          <AssociationSet Name="aspnet_UsersInRoles" Association="Models.aspnet_UsersInRoles">
+            <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" /></AssociationSet></EntityContainer>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="CategoryID" />
+          </Key>
+          <Property Name="CategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="IsUsed" Type="Boolean" Nullable="false" />
+          <Property Name="DefaultImage" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="SortOrder" Type="Int32" />
+          <NavigationProperty Name="ParentCategory" Relationship="Models.FK__Categorie__Paren__35BCFE0A" FromRole="Categories" ToRole="ParentCategories" />
+          <NavigationProperty Name="LocalizedCategories" Relationship="Models.FK__Localized__Categ__3A81B327" FromRole="Categories" ToRole="LocalizedCategories" />
+          <NavigationProperty Name="News" Relationship="Models.FK__News__CategoryID__4222D4EF" FromRole="Categories" ToRole="News" />
+        </EntityType>
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="CityID" />
+          </Key>
+          <Property Name="CityID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="IsUsed" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Country" Relationship="Models.FK__Cities__CountryI__182C9B23" FromRole="Cities" ToRole="Countries" />
+          <NavigationProperty Name="CitiesInHome" Relationship="Models.FK__CitiesInH__CityI__1DE57479" FromRole="Cities" ToRole="CitiesInHome" />
+          <NavigationProperty Name="LocalizedCities" Relationship="Models.FK__Localized__CityI__22AA2996" FromRole="Cities" ToRole="LocalizedCities" />
+          <NavigationProperty Name="News" Relationship="Models.FK__News__CityID__44FF419A" FromRole="Cities" ToRole="News" />
+          <NavigationProperty Name="ParentCategories" Relationship="Models.FK__ParentCat__CityI__29572725" FromRole="Cities" ToRole="ParentCategories" />
+        </EntityType>
+        <EntityType Name="CitiesInHome">
+          <Key>
+            <PropertyRef Name="CityID" />
+          </Key>
+          <Property Name="CityID" Type="Int32" Nullable="false" />
+          <Property Name="IsDefault" Type="Boolean" Nullable="false" />
+          <Property Name="SortOrder" Type="Int32" />
+          <NavigationProperty Name="City" Relationship="Models.FK__CitiesInH__CityI__1DE57479" FromRole="CitiesInHome" ToRole="Cities" />
+        </EntityType>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="CountryID" />
+          </Key>
+          <Property Name="CountryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="IsUsed" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Cities" Relationship="Models.FK__Cities__CountryI__182C9B23" FromRole="Countries" ToRole="Cities" />
+        </EntityType>
+        <EntityType Name="Language">
+          <Key>
+            <PropertyRef Name="LanguageID" />
+          </Key>
+          <Property Name="LanguageID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LanguageCode" Type="String" Nullable="false" MaxLength="4" Unicode="false" FixedLength="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Flag" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IsUsed" Type="Boolean" Nullable="false" />
+          <Property Name="SortOrder" Type="Int32" />
+          <NavigationProperty Name="LocalizedCities" Relationship="Models.FK__Localized__Langu__239E4DCF" FromRole="Languages" ToRole="LocalizedCities" />
+          <NavigationProperty Name="LocalizedParentCategories" Relationship="Models.FK__Localized__Langu__2F10007B" FromRole="Languages" ToRole="LocalizedParentCategories" />
+          <NavigationProperty Name="LocalizedCategories" Relationship="Models.FK__Localized__Langu__3B75D760" FromRole="Languages" ToRole="LocalizedCategories" />
+          <NavigationProperty Name="LocalizedNews" Relationship="Models.FK__Localized__Langu__4AB81AF0" FromRole="Languages" ToRole="LocalizedNews" />
+        </EntityType>
+        <EntityType Name="LocalizedCategory">
+          <Key>
+            <PropertyRef Name="CategoryID" />
+            <PropertyRef Name="LanguageID" />
+          </Key>
+          <Property Name="CategoryID" Type="Int32" Nullable="false" />
+          <Property Name="LanguageID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="SEOUrl" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="SEOKeyword" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="SEODescription" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Category" Relationship="Models.FK__Localized__Categ__3A81B327" FromRole="LocalizedCategories" ToRole="Categories" />
+          <NavigationProperty Name="Language" Relationship="Models.FK__Localized__Langu__3B75D760" FromRole="LocalizedCategories" ToRole="Languages" />
+        </EntityType>
+        <EntityType Name="LocalizedCity">
+          <Key>
+            <PropertyRef Name="CityID" />
+            <PropertyRef Name="LanguageID" />
+          </Key>
+          <Property Name="CityID" Type="Int32" Nullable="false" />
+          <Property Name="LanguageID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="SEOUrl" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="SEOKeyword" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="SEODescription" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="City" Relationship="Models.FK__Localized__CityI__22AA2996" FromRole="LocalizedCities" ToRole="Cities" />
+          <NavigationProperty Name="Language" Relationship="Models.FK__Localized__Langu__239E4DCF" FromRole="LocalizedCities" ToRole="Languages" />
+        </EntityType>
+        <EntityType Name="LocalizedNew">
+          <Key>
+            <PropertyRef Name="NewsID" />
+            <PropertyRef Name="LanguageID" />
+          </Key>
+          <Property Name="NewsID" Type="Int32" Nullable="false" />
+          <Property Name="LanguageID" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="300" Unicode="true" FixedLength="false" />
+          <Property Name="FullContent" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="SEOUrl" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="SEOKeyword" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="SEODescription" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Tags" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Language" Relationship="Models.FK__Localized__Langu__4AB81AF0" FromRole="LocalizedNews" ToRole="Languages" />
+          <NavigationProperty Name="News" Relationship="Models.FK__Localized__NewsI__49C3F6B7" FromRole="LocalizedNews" ToRole="News" />
+        </EntityType>
+        <EntityType Name="LocalizedParentCategory">
+          <Key>
+            <PropertyRef Name="ParentCategoryID" />
+            <PropertyRef Name="LanguageID" />
+          </Key>
+          <Property Name="ParentCategoryID" Type="Int32" Nullable="false" />
+          <Property Name="LanguageID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="SEOUrl" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="SEOKeyword" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="SEODescription" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Language" Relationship="Models.FK__Localized__Langu__2F10007B" FromRole="LocalizedParentCategories" ToRole="Languages" />
+          <NavigationProperty Name="ParentCategory" Relationship="Models.FK__Localized__Paren__2E1BDC42" FromRole="LocalizedParentCategories" ToRole="ParentCategories" />
+        </EntityType>
+        <EntityType Name="News">
+          <Key>
+            <PropertyRef Name="NewsId" />
+          </Key>
+          <Property Name="NewsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PostedDate" Type="DateTime" Nullable="true" />
+          <Property Name="IsApproved" Type="Boolean" Nullable="false" />
+          <Property Name="MainImage" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="true" />
+          <NavigationProperty Name="Category" Relationship="Models.FK__News__CategoryID__4222D4EF" FromRole="News" ToRole="Categories" />
+          <NavigationProperty Name="City" Relationship="Models.FK__News__CityID__44FF419A" FromRole="News" ToRole="Cities" />
+          <NavigationProperty Name="LocalizedNews" Relationship="Models.FK__Localized__NewsI__49C3F6B7" FromRole="News" ToRole="LocalizedNews" />
+          <NavigationProperty Name="ParentCategory" Relationship="Models.FK__News__ParentCate__440B1D61" FromRole="News" ToRole="ParentCategories" />
+          <NavigationProperty Name="User" Relationship="Models.FK__News__UserID__4316F928" FromRole="News" ToRole="Users" />
+          <NavigationProperty Name="PromotedNew" Relationship="Models.FK__PromotedN__NewsI__5070F446" FromRole="News" ToRole="PromotedNews" />
+        </EntityType>
+        <EntityType Name="ParentCategory">
+          <Key>
+            <PropertyRef Name="ParentCategoryID" />
+          </Key>
+          <Property Name="ParentCategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="IsUsed" Type="Boolean" Nullable="false" />
+          <Property Name="SortOrder" Type="Int32" />
+          <NavigationProperty Name="Categories" Relationship="Models.FK__Categorie__Paren__35BCFE0A" FromRole="ParentCategories" ToRole="Categories" />
+          <NavigationProperty Name="City" Relationship="Models.FK__ParentCat__CityI__29572725" FromRole="ParentCategories" ToRole="Cities" />
+          <NavigationProperty Name="LocalizedParentCategories" Relationship="Models.FK__Localized__Paren__2E1BDC42" FromRole="ParentCategories" ToRole="LocalizedParentCategories" />
+          <NavigationProperty Name="News" Relationship="Models.FK__News__ParentCate__440B1D61" FromRole="ParentCategories" ToRole="News" />
+        </EntityType>
+        <EntityType Name="PromotedNew">
+          <Key>
+            <PropertyRef Name="NewsID" />
+          </Key>
+          <Property Name="NewsID" Type="Int32" Nullable="false" />
+          <Property Name="StartedDate" Type="DateTime" Nullable="false" />
+          <Property Name="EndedDate" Type="DateTime" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="300" Unicode="true" FixedLength="false" />
+          <Property Name="IsUsed" Type="Boolean" Nullable="false" />
+          <Property Name="LevelID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="News" Relationship="Models.FK__PromotedN__NewsI__5070F446" FromRole="PromotedNews" ToRole="News" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="RoleID" />
+          </Key>
+          <Property Name="RoleID" Type="Int32" Nullable="false" />
+          <Property Name="RoleName" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Users" Relationship="Models.FK__Users__RoleID__0AD2A005" FromRole="Roles" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" Nullable="false" MaxLength="16" Unicode="false" FixedLength="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="16" Unicode="false" FixedLength="false" />
+          <Property Name="Email" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="News" Relationship="Models.FK__News__UserID__4316F928" FromRole="Users" ToRole="News" />
+          <NavigationProperty Name="Role" Relationship="Models.FK__Users__RoleID__0AD2A005" FromRole="Users" ToRole="Roles" />
+        </EntityType>
+        <Association Name="FK__Categorie__Paren__35BCFE0A">
+          <End Role="ParentCategories" Type="Models.ParentCategory" Multiplicity="0..1" />
+          <End Role="Categories" Type="Models.Category" Multiplicity="*" />
+        </Association>
+        <Association Name="FK__Localized__Categ__3A81B327">
+          <End Role="Categories" Type="Models.Category" Multiplicity="1" />
+          <End Role="LocalizedCategories" Type="Models.LocalizedCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="CategoryID" />
+            </Principal>
+            <Dependent Role="LocalizedCategories">
+              <PropertyRef Name="CategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__News__CategoryID__4222D4EF">
+          <End Role="Categories" Type="Models.Category" Multiplicity="0..1" />
+          <End Role="News" Type="Models.News" Multiplicity="*" />
+        </Association>
+        <Association Name="FK__Cities__CountryI__182C9B23">
+          <End Role="Countries" Type="Models.Country" Multiplicity="0..1" />
+          <End Role="Cities" Type="Models.City" Multiplicity="*" />
+        </Association>
+        <Association Name="FK__CitiesInH__CityI__1DE57479">
+          <End Role="Cities" Type="Models.City" Multiplicity="1" />
+          <End Role="CitiesInHome" Type="Models.CitiesInHome" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Cities">
+              <PropertyRef Name="CityID" />
+            </Principal>
+            <Dependent Role="CitiesInHome">
+              <PropertyRef Name="CityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Localized__CityI__22AA2996">
+          <End Role="Cities" Type="Models.City" Multiplicity="1" />
+          <End Role="LocalizedCities" Type="Models.LocalizedCity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cities">
+              <PropertyRef Name="CityID" />
+            </Principal>
+            <Dependent Role="LocalizedCities">
+              <PropertyRef Name="CityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__News__CityID__44FF419A">
+          <End Role="Cities" Type="Models.City" Multiplicity="0..1" />
+          <End Role="News" Type="Models.News" Multiplicity="*" />
+        </Association>
+        <Association Name="FK__ParentCat__CityI__29572725">
+          <End Role="Cities" Type="Models.City" Multiplicity="0..1" />
+          <End Role="ParentCategories" Type="Models.ParentCategory" Multiplicity="*" />
+        </Association>
+        <Association Name="FK__Localized__Langu__239E4DCF">
+          <End Role="Languages" Type="Models.Language" Multiplicity="1" />
+          <End Role="LocalizedCities" Type="Models.LocalizedCity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Languages">
+              <PropertyRef Name="LanguageID" />
+            </Principal>
+            <Dependent Role="LocalizedCities">
+              <PropertyRef Name="LanguageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Localized__Langu__2F10007B">
+          <End Role="Languages" Type="Models.Language" Multiplicity="1" />
+          <End Role="LocalizedParentCategories" Type="Models.LocalizedParentCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Languages">
+              <PropertyRef Name="LanguageID" />
+            </Principal>
+            <Dependent Role="LocalizedParentCategories">
+              <PropertyRef Name="LanguageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Localized__Langu__3B75D760">
+          <End Role="Languages" Type="Models.Language" Multiplicity="1" />
+          <End Role="LocalizedCategories" Type="Models.LocalizedCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Languages">
+              <PropertyRef Name="LanguageID" />
+            </Principal>
+            <Dependent Role="LocalizedCategories">
+              <PropertyRef Name="LanguageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Localized__Langu__4AB81AF0">
+          <End Role="Languages" Type="Models.Language" Multiplicity="1" />
+          <End Role="LocalizedNews" Type="Models.LocalizedNew" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Languages">
+              <PropertyRef Name="LanguageID" />
+            </Principal>
+            <Dependent Role="LocalizedNews">
+              <PropertyRef Name="LanguageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Localized__NewsI__49C3F6B7">
+          <End Role="News" Type="Models.News" Multiplicity="1" />
+          <End Role="LocalizedNews" Type="Models.LocalizedNew" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="News">
+              <PropertyRef Name="NewsId" />
+            </Principal>
+            <Dependent Role="LocalizedNews">
+              <PropertyRef Name="NewsID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Localized__Paren__2E1BDC42">
+          <End Role="ParentCategories" Type="Models.ParentCategory" Multiplicity="1" />
+          <End Role="LocalizedParentCategories" Type="Models.LocalizedParentCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ParentCategories">
+              <PropertyRef Name="ParentCategoryID" />
+            </Principal>
+            <Dependent Role="LocalizedParentCategories">
+              <PropertyRef Name="ParentCategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__News__ParentCate__440B1D61">
+          <End Role="ParentCategories" Type="Models.ParentCategory" Multiplicity="0..1" />
+          <End Role="News" Type="Models.News" Multiplicity="*" />
+        </Association>
+        <Association Name="FK__News__UserID__4316F928">
+          <End Role="Users" Type="Models.User" Multiplicity="0..1" />
+          <End Role="News" Type="Models.News" Multiplicity="*" />
+        </Association>
+        <Association Name="FK__PromotedN__NewsI__5070F446">
+          <End Role="News" Type="Models.News" Multiplicity="1" />
+          <End Role="PromotedNews" Type="Models.PromotedNew" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="News">
+              <PropertyRef Name="NewsId" />
+            </Principal>
+            <Dependent Role="PromotedNews">
+              <PropertyRef Name="NewsID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Users__RoleID__0AD2A005">
+          <End Role="Roles" Type="Models.Role" Multiplicity="0..1" />
+          <End Role="Users" Type="Models.User" Multiplicity="*" />
+        </Association>
+        <EntityType Name="aspnet_Membership">
+          <Key>
+            <PropertyRef Name="UserId" /></Key>
+          <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+          <Property Name="UserId" Type="Guid" Nullable="false" />
+          <Property Name="Password" Type="String" Nullable="false" />
+          <Property Name="PasswordFormat" Type="Int32" Nullable="false" />
+          <Property Name="PasswordSalt" Type="String" Nullable="false" />
+          <Property Name="MobilePIN" Type="String" Nullable="true" />
+          <Property Name="Email" Type="String" Nullable="true" />
+          <Property Name="LoweredEmail" Type="String" Nullable="true" />
+          <Property Name="PasswordQuestion" Type="String" Nullable="true" />
+          <Property Name="PasswordAnswer" Type="String" Nullable="true" />
+          <Property Name="IsApproved" Type="Boolean" Nullable="false" />
+          <Property Name="IsLockedOut" Type="Boolean" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" />
+          <Property Name="LastLoginDate" Type="DateTime" Nullable="false" />
+          <Property Name="LastPasswordChangedDate" Type="DateTime" Nullable="false" />
+          <Property Name="LastLockoutDate" Type="DateTime" Nullable="false" />
+          <Property Name="FailedPasswordAttemptCount" Type="Int32" Nullable="false" />
+          <Property Name="FailedPasswordAttemptWindowStart" Type="DateTime" Nullable="false" />
+          <Property Name="FailedPasswordAnswerAttemptCount" Type="Int32" Nullable="false" />
+          <Property Name="FailedPasswordAnswerAttemptWindowStart" Type="DateTime" Nullable="false" />
+          <Property Name="Comment" Type="String" Nullable="true" />
+          <NavigationProperty Name="aspnet_Users" Relationship="Models.FK__aspnet_Me__UserI__4CA06362" FromRole="aspnet_Membership" ToRole="aspnet_Users" /></EntityType>
+        <EntityType Name="aspnet_Roles">
+          <Key>
+            <PropertyRef Name="RoleId" /></Key>
+          <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+          <Property Name="RoleId" Type="Guid" Nullable="false" />
+          <Property Name="RoleName" Type="String" Nullable="false" />
+          <Property Name="LoweredRoleName" Type="String" Nullable="false" />
+          <Property Name="Description" Type="String" Nullable="true" />
+          <NavigationProperty Name="aspnet_Users" Relationship="Models.aspnet_UsersInRoles" FromRole="aspnet_Roles" ToRole="aspnet_Users" /></EntityType>
+        <EntityType Name="aspnet_Users">
+          <Key>
+            <PropertyRef Name="UserId" /></Key>
+          <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+          <Property Name="UserId" Type="Guid" Nullable="false" />
+          <Property Name="UserName" Type="String" Nullable="false" />
+          <Property Name="LoweredUserName" Type="String" Nullable="false" />
+          <Property Name="MobileAlias" Type="String" Nullable="true" />
+          <Property Name="IsAnonymous" Type="Boolean" Nullable="false" />
+          <Property Name="LastActivityDate" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="aspnet_Membership" Relationship="Models.FK__aspnet_Me__UserI__4CA06362" FromRole="aspnet_Users" ToRole="aspnet_Membership" />
+          <NavigationProperty Name="aspnet_Roles" Relationship="Models.aspnet_UsersInRoles" FromRole="aspnet_Users" ToRole="aspnet_Roles" /></EntityType>
+        <Association Name="FK__aspnet_Me__UserI__4CA06362">
+          <End Type="Models.aspnet_Users" Role="aspnet_Users" Multiplicity="1" />
+          <End Type="Models.aspnet_Membership" Role="aspnet_Membership" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Users">
+              <PropertyRef Name="UserId" /></Principal>
+            <Dependent Role="aspnet_Membership">
+              <PropertyRef Name="UserId" /></Dependent></ReferentialConstraint></Association>
+        <Association Name="aspnet_UsersInRoles">
+          <End Type="Models.aspnet_Roles" Role="aspnet_Roles" Multiplicity="*" />
+          <End Type="Models.aspnet_Users" Role="aspnet_Users" Multiplicity="*" /></Association></Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
+        <EntityContainerMapping StorageEntityContainer="ModelsStoreContainer" CdmEntityContainer="VietnamMLSEntities">
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="IsTypeOf(Models.Category)">
+              <MappingFragment StoreEntitySet="Categories">
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+                <ScalarProperty Name="DefaultImage" ColumnName="DefaultImage" />
+                <ScalarProperty Name="IsUsed" ColumnName="IsUsed" />
+                <ScalarProperty Name="Description" ColumnName="Description" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Cities">
+            <EntityTypeMapping TypeName="IsTypeOf(Models.City)">
+              <MappingFragment StoreEntitySet="Cities">
+                <ScalarProperty Name="CityID" ColumnName="CityID" />
+                <ScalarProperty Name="IsUsed" ColumnName="IsUsed" />
+                <ScalarProperty Name="Description" ColumnName="Description" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="CitiesInHomes">
+            <EntityTypeMapping TypeName="IsTypeOf(Models.CitiesInHome)">
+              <MappingFragment StoreEntitySet="CitiesInHome">
+                <ScalarProperty Name="CityID" ColumnName="CityID" />
+                <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+                <ScalarProperty Name="IsDefault" ColumnName="IsDefault" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Countries">
+            <EntityTypeMapping TypeName="IsTypeOf(Models.Country)">
+              <MappingFragment StoreEntitySet="Countries">
+                <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+                <ScalarProperty Name="IsUsed" ColumnName="IsUsed" />
+                <ScalarProperty Name="Name" ColumnName="Name" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Languages">
+            <EntityTypeMapping TypeName="IsTypeOf(Models.Language)">
+              <MappingFragment StoreEntitySet="Languages">
+                <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+                <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+                <ScalarProperty Name="IsUsed" ColumnName="IsUsed" />
+                <ScalarProperty Name="Flag" ColumnName="Flag" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="LanguageCode" ColumnName="LanguageCode" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="LocalizedCategories">
+            <EntityTypeMapping TypeName="IsTypeOf(Models.LocalizedCategory)">
+              <MappingFragment StoreEntitySet="LocalizedCategories">
+                <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="SEODescription" ColumnName="SEODescription" />
+                <ScalarProperty Name="SEOKeyword" ColumnName="SEOKeyword" />
+                <ScalarProperty Name="SEOUrl" ColumnName="SEOUrl" />
+                <ScalarProperty Name="Name" ColumnName="Name" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="LocalizedCities">
+            <EntityTypeMapping TypeName="IsTypeOf(Models.LocalizedCity)">
+              <MappingFragment StoreEntitySet="LocalizedCities">
+                <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+                <ScalarProperty Name="CityID" ColumnName="CityID" />
+                <ScalarProperty Name="SEODescription" ColumnName="SEODescription" />
+                <ScalarProperty Name="SEOKeyword" ColumnName="SEOKeyword" />
+                <ScalarProperty Name="SEOUrl" ColumnName="SEOUrl" />
+                <ScalarProperty Name="Name" ColumnName="Name" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="LocalizedNews">
+            <EntityTypeMapping TypeName="IsTypeOf(Models.LocalizedNew)">
+              <MappingFragment StoreEntitySet="LocalizedNews">
+                <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+                <ScalarProperty Name="NewsID" ColumnName="NewsID" />
+                <ScalarProperty Name="Tags" ColumnName="Tags" />
+                <ScalarProperty Name="SEODescription" ColumnName="SEODescription" />
+                <ScalarProperty Name="SEOKeyword" ColumnName="SEOKeyword" />
+                <ScalarProperty Name="SEOUrl" ColumnName="SEOUrl" />
+                <ScalarProperty Name="FullContent" ColumnName="FullContent" />
+                <ScalarProperty Name="Title" ColumnName="Title" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="LocalizedParentCategories">
+            <EntityTypeMapping TypeName="IsTypeOf(Models.LocalizedParentCategory)">
+              <MappingFragment StoreEntitySet="LocalizedParentCategories">
+                <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+                <ScalarProperty Name="ParentCategoryID" ColumnName="ParentCategoryID" />
+                <ScalarProperty Name="SEODescription" ColumnName="SEODescription" />
+                <ScalarProperty Name="SEOKeyword" ColumnName="SEOKeyword" />
+                <ScalarProperty Name="SEOUrl" ColumnName="SEOUrl" />
+                <ScalarProperty Name="Name" ColumnName="Name" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="News">
+            <EntityTypeMapping TypeName="IsTypeOf(Models.News)">
+              <MappingFragment StoreEntitySet="News">
+                <ScalarProperty Name="NewsId" ColumnName="NewsId" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="MainImage" ColumnName="MainImage" />
+                <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+                <ScalarProperty Name="PostedDate" ColumnName="PostedDate" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="ParentCategories">
+            <EntityTypeMapping TypeName="IsTypeOf(Models.ParentCategory)">
+              <MappingFragment StoreEntitySet="ParentCategories">
+                <ScalarProperty Name="ParentCategoryID" ColumnName="ParentCategoryID" />
+                <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+                <ScalarProperty Name="IsUsed" ColumnName="IsUsed" />
+                <ScalarProperty Name="Description" ColumnName="Description" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="PromotedNews">
+            <EntityTypeMapping TypeName="IsTypeOf(Models.PromotedNew)">
+              <MappingFragment StoreEntitySet="PromotedNews">
+                <ScalarProperty Name="NewsID" ColumnName="NewsID" />
+                <ScalarProperty Name="LevelID" ColumnName="LevelID" />
+                <ScalarProperty Name="IsUsed" ColumnName="IsUsed" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="EndedDate" ColumnName="EndedDate" />
+                <ScalarProperty Name="StartedDate" ColumnName="StartedDate" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="IsTypeOf(Models.Role)">
+              <MappingFragment StoreEntitySet="Roles">
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="IsTypeOf(Models.User)">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Username" ColumnName="Username" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <AssociationSetMapping Name="FK__Categorie__Paren__35BCFE0A" TypeName="Models.FK__Categorie__Paren__35BCFE0A" StoreEntitySet="Categories">
+            <EndProperty Name="ParentCategories">
+              <ScalarProperty Name="ParentCategoryID" ColumnName="ParentCategoryID" />
+            </EndProperty>
+            <EndProperty Name="Categories">
+              <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+            </EndProperty>
+            <Condition ColumnName="ParentCategoryID" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK__Localized__Categ__3A81B327" TypeName="Models.FK__Localized__Categ__3A81B327" StoreEntitySet="LocalizedCategories">
+            <EndProperty Name="Categories">
+              <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+            </EndProperty>
+            <EndProperty Name="LocalizedCategories">
+              <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+              <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK__News__CategoryID__4222D4EF" TypeName="Models.FK__News__CategoryID__4222D4EF" StoreEntitySet="News">
+            <EndProperty Name="Categories">
+              <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+            </EndProperty>
+            <EndProperty Name="News">
+              <ScalarProperty Name="NewsId" ColumnName="NewsId" />
+            </EndProperty>
+            <Condition ColumnName="CategoryID" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK__Cities__CountryI__182C9B23" TypeName="Models.FK__Cities__CountryI__182C9B23" StoreEntitySet="Cities">
+            <EndProperty Name="Countries">
+              <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+            </EndProperty>
+            <EndProperty Name="Cities">
+              <ScalarProperty Name="CityID" ColumnName="CityID" />
+            </EndProperty>
+            <Condition ColumnName="CountryID" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK__CitiesInH__CityI__1DE57479" TypeName="Models.FK__CitiesInH__CityI__1DE57479" StoreEntitySet="CitiesInHome">
+            <EndProperty Name="Cities">
+              <ScalarProperty Name="CityID" ColumnName="CityID" />
+            </EndProperty>
+            <EndProperty Name="CitiesInHome">
+              <ScalarProperty Name="CityID" ColumnName="CityID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK__Localized__CityI__22AA2996" TypeName="Models.FK__Localized__CityI__22AA2996" StoreEntitySet="LocalizedCities">
+            <EndProperty Name="Cities">
+              <ScalarProperty Name="CityID" ColumnName="CityID" />
+            </EndProperty>
+            <EndProperty Name="LocalizedCities">
+              <ScalarProperty Name="CityID" ColumnName="CityID" />
+              <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK__News__CityID__44FF419A" TypeName="Models.FK__News__CityID__44FF419A" StoreEntitySet="News">
+            <EndProperty Name="Cities">
+              <ScalarProperty Name="CityID" ColumnName="CityID" />
+            </EndProperty>
+            <EndProperty Name="News">
+              <ScalarProperty Name="NewsId" ColumnName="NewsId" />
+            </EndProperty>
+            <Condition ColumnName="CityID" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK__ParentCat__CityI__29572725" TypeName="Models.FK__ParentCat__CityI__29572725" StoreEntitySet="ParentCategories">
+            <EndProperty Name="Cities">
+              <ScalarProperty Name="CityID" ColumnName="CityID" />
+            </EndProperty>
+            <EndProperty Name="ParentCategories">
+              <ScalarProperty Name="ParentCategoryID" ColumnName="ParentCategoryID" />
+            </EndProperty>
+            <Condition ColumnName="CityID" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK__Localized__Langu__239E4DCF" TypeName="Models.FK__Localized__Langu__239E4DCF" StoreEntitySet="LocalizedCities">
+            <EndProperty Name="Languages">
+              <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+            </EndProperty>
+            <EndProperty Name="LocalizedCities">
+              <ScalarProperty Name="CityID" ColumnName="CityID" />
+              <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK__Localized__Langu__2F10007B" TypeName="Models.FK__Localized__Langu__2F10007B" StoreEntitySet="LocalizedParentCategories">
+            <EndProperty Name="Languages">
+              <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+            </EndProperty>
+            <EndProperty Name="LocalizedParentCategories">
+              <ScalarProperty Name="ParentCategoryID" ColumnName="ParentCategoryID" />
+              <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK__Localized__Langu__3B75D760" TypeName="Models.FK__Localized__Langu__3B75D760" StoreEntitySet="LocalizedCategories">
+            <EndProperty Name="Languages">
+              <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+            </EndProperty>
+            <EndProperty Name="LocalizedCategories">
+              <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+              <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK__Localized__Langu__4AB81AF0" TypeName="Models.FK__Localized__Langu__4AB81AF0" StoreEntitySet="LocalizedNews">
+            <EndProperty Name="Languages">
+              <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+            </EndProperty>
+            <EndProperty Name="LocalizedNews">
+              <ScalarProperty Name="NewsID" ColumnName="NewsID" />
+              <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK__Localized__NewsI__49C3F6B7" TypeName="Models.FK__Localized__NewsI__49C3F6B7" StoreEntitySet="LocalizedNews">
+            <EndProperty Name="News">
+              <ScalarProperty Name="NewsId" ColumnName="NewsID" />
+            </EndProperty>
+            <EndProperty Name="LocalizedNews">
+              <ScalarProperty Name="NewsID" ColumnName="NewsID" />
+              <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK__Localized__Paren__2E1BDC42" TypeName="Models.FK__Localized__Paren__2E1BDC42" StoreEntitySet="LocalizedParentCategories">
+            <EndProperty Name="ParentCategories">
+              <ScalarProperty Name="ParentCategoryID" ColumnName="ParentCategoryID" />
+            </EndProperty>
+            <EndProperty Name="LocalizedParentCategories">
+              <ScalarProperty Name="ParentCategoryID" ColumnName="ParentCategoryID" />
+              <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK__News__ParentCate__440B1D61" TypeName="Models.FK__News__ParentCate__440B1D61" StoreEntitySet="News">
+            <EndProperty Name="ParentCategories">
+              <ScalarProperty Name="ParentCategoryID" ColumnName="ParentCategoryID" />
+            </EndProperty>
+            <EndProperty Name="News">
+              <ScalarProperty Name="NewsId" ColumnName="NewsId" />
+            </EndProperty>
+            <Condition ColumnName="ParentCategoryID" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK__News__UserID__4316F928" TypeName="Models.FK__News__UserID__4316F928" StoreEntitySet="News">
+            <EndProperty Name="Users">
+              <ScalarProperty Name="UserID" ColumnName="UserID" />
+            </EndProperty>
+            <EndProperty Name="News">
+              <ScalarProperty Name="NewsId" ColumnName="NewsId" />
+            </EndProperty>
+            <Condition ColumnName="UserID" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK__PromotedN__NewsI__5070F446" TypeName="Models.FK__PromotedN__NewsI__5070F446" StoreEntitySet="PromotedNews">
+            <EndProperty Name="News">
+              <ScalarProperty Name="NewsId" ColumnName="NewsID" />
+            </EndProperty>
+            <EndProperty Name="PromotedNews">
+              <ScalarProperty Name="NewsID" ColumnName="NewsID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK__Users__RoleID__0AD2A005" TypeName="Models.FK__Users__RoleID__0AD2A005" StoreEntitySet="Users">
+            <EndProperty Name="Roles">
+              <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+            </EndProperty>
+            <EndProperty Name="Users">
+              <ScalarProperty Name="UserID" ColumnName="UserID" />
+            </EndProperty>
+            <Condition ColumnName="RoleID" IsNull="false" />
+          </AssociationSetMapping>
+          <EntitySetMapping Name="aspnet_Membership">
+            <EntityTypeMapping TypeName="IsTypeOf(Models.aspnet_Membership)">
+              <MappingFragment StoreEntitySet="aspnet_Membership">
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="FailedPasswordAnswerAttemptWindowStart" ColumnName="FailedPasswordAnswerAttemptWindowStart" />
+                <ScalarProperty Name="FailedPasswordAnswerAttemptCount" ColumnName="FailedPasswordAnswerAttemptCount" />
+                <ScalarProperty Name="FailedPasswordAttemptWindowStart" ColumnName="FailedPasswordAttemptWindowStart" />
+                <ScalarProperty Name="FailedPasswordAttemptCount" ColumnName="FailedPasswordAttemptCount" />
+                <ScalarProperty Name="LastLockoutDate" ColumnName="LastLockoutDate" />
+                <ScalarProperty Name="LastPasswordChangedDate" ColumnName="LastPasswordChangedDate" />
+                <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="IsLockedOut" ColumnName="IsLockedOut" />
+                <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+                <ScalarProperty Name="PasswordAnswer" ColumnName="PasswordAnswer" />
+                <ScalarProperty Name="PasswordQuestion" ColumnName="PasswordQuestion" />
+                <ScalarProperty Name="LoweredEmail" ColumnName="LoweredEmail" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="MobilePIN" ColumnName="MobilePIN" />
+                <ScalarProperty Name="PasswordSalt" ColumnName="PasswordSalt" />
+                <ScalarProperty Name="PasswordFormat" ColumnName="PasswordFormat" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="aspnet_Roles">
+            <EntityTypeMapping TypeName="IsTypeOf(Models.aspnet_Roles)">
+              <MappingFragment StoreEntitySet="aspnet_Roles">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="LoweredRoleName" ColumnName="LoweredRoleName" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="aspnet_Users">
+            <EntityTypeMapping TypeName="IsTypeOf(Models.aspnet_Users)">
+              <MappingFragment StoreEntitySet="aspnet_Users">
+                <ScalarProperty Name="LastActivityDate" ColumnName="LastActivityDate" />
+                <ScalarProperty Name="IsAnonymous" ColumnName="IsAnonymous" />
+                <ScalarProperty Name="MobileAlias" ColumnName="MobileAlias" />
+                <ScalarProperty Name="LoweredUserName" ColumnName="LoweredUserName" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <AssociationSetMapping Name="FK__aspnet_Me__UserI__4CA06362" TypeName="Models.FK__aspnet_Me__UserI__4CA06362" StoreEntitySet="aspnet_Membership">
+            <EndProperty Name="aspnet_Membership">
+              <ScalarProperty Name="UserId" ColumnName="UserId" /></EndProperty>
+            <EndProperty Name="aspnet_Users">
+              <ScalarProperty Name="UserId" ColumnName="UserId" /></EndProperty></AssociationSetMapping>
+          <AssociationSetMapping Name="aspnet_UsersInRoles" TypeName="Models.aspnet_UsersInRoles" StoreEntitySet="aspnet_UsersInRoles">
+            <EndProperty Name="aspnet_Users">
+              <ScalarProperty Name="UserId" ColumnName="UserId" /></EndProperty>
+            <EndProperty Name="aspnet_Roles">
+              <ScalarProperty Name="RoleId" ColumnName="RoleId" /></EndProperty></AssociationSetMapping></EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2007/06/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="VietnamMls" ZoomLevel="57">
+        <EntityTypeShape EntityType="Models.Category" Width="1.5" PointX="7.5" PointY="18.25" Height="2.5571907552083317" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.City" Width="1.5" PointX="3" PointY="9.75" Height="2.5571907552083317" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.CitiesInHome" Width="1.5" PointX="5.25" PointY="8.5" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.Country" Width="1.5" PointX="0.75" PointY="10.125" Height="1.7879850260416639" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.Language" Width="1.5" PointX="3" PointY="13.5" Height="2.9417936197916674" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.LocalizedCategory" Width="1.5" PointX="9.75" PointY="18.25" Height="2.5571907552083317" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.LocalizedCity" Width="1.5" PointX="5.25" PointY="11.75" Height="2.5571907552083317" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.LocalizedNew" Width="1.5" PointX="12" PointY="13.75" Height="2.9417936197916674" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.LocalizedParentCategory" Width="1.5" PointX="7.5" PointY="14.25" Height="2.5571907552083317" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.News" Width="1.5" PointX="9.75" PointY="13.625" Height="3.1340950520833335" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.ParentCategory" Width="1.5" PointX="5.25" PointY="18.25" Height="2.5571907552083317" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.PromotedNew" Width="1.5" PointX="12" PointY="17.75" Height="2.3648893229166745" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.Role" Width="1.5" PointX="5.25" PointY="22.5" Height="1.5956835937500031" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.User" Width="1.5" PointX="7.5" PointY="22.125" Height="2.172587890624996" IsExpanded="true" />
+        <AssociationConnector Association="Models.FK__Categorie__Paren__35BCFE0A" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="19.528595377604166" />
+          <ConnectorPoint PointX="7.5" PointY="19.528595377604166" />
+        </AssociationConnector>
+        <AssociationConnector Association="Models.FK__Localized__Categ__3A81B327" ManuallyRouted="false">
+          <ConnectorPoint PointX="9" PointY="19.528595377604166" />
+          <ConnectorPoint PointX="9.4791666666666661" PointY="19.528595377604166" />
+          <ConnectorPoint PointX="9.6458333333333339" PointY="19.528595377604166" />
+          <ConnectorPoint PointX="9.75" PointY="19.528595377604166" />
+        </AssociationConnector>
+        <AssociationConnector Association="Models.FK__News__CategoryID__4222D4EF" ManuallyRouted="false">
+          <ConnectorPoint PointX="9" PointY="18.25" />
+          <ConnectorPoint PointX="9.375" PointY="17.875" />
+          <ConnectorPoint PointX="9.375" PointY="15.192047526041666" />
+          <ConnectorPoint PointX="9.75" PointY="15.192047526041666" />
+        </AssociationConnector>
+        <AssociationConnector Association="Models.FK__Cities__CountryI__182C9B23" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="11.018992513020832" />
+          <ConnectorPoint PointX="3" PointY="11.018992513020832" />
+        </AssociationConnector>
+        <AssociationConnector Association="Models.FK__CitiesInH__CityI__1DE57479" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="10.018992513020834" />
+          <ConnectorPoint PointX="5.25" PointY="10.018992513020834" />
+        </AssociationConnector>
+        <AssociationConnector Association="Models.FK__Localized__CityI__22AA2996" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="12.028595377604166" />
+          <ConnectorPoint PointX="5.25" PointY="12.028595377604166" />
+        </AssociationConnector>
+        <AssociationConnector Association="Models.FK__News__CityID__44FF419A" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="11.018992513020834" />
+          <ConnectorPoint PointX="10.5" PointY="11.018992513020834" />
+          <ConnectorPoint PointX="10.5" PointY="13.625" />
+        </AssociationConnector>
+        <AssociationConnector Association="Models.FK__ParentCat__CityI__29572725" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="12.307190755208332" />
+          <ConnectorPoint PointX="4.875" PointY="12.682190755208332" />
+          <ConnectorPoint PointX="4.875" PointY="19.528595377604166" />
+          <ConnectorPoint PointX="5.25" PointY="19.528595377604166" />
+        </AssociationConnector>
+        <AssociationConnector Association="Models.FK__Localized__Langu__239E4DCF" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="13.903595377604166" />
+          <ConnectorPoint PointX="4.791666666666667" PointY="13.903595377604166" />
+          <ConnectorPoint PointX="4.958333333333333" PointY="13.903595377604166" />
+          <ConnectorPoint PointX="5.25" PointY="13.903595377604166" />
+        </AssociationConnector>
+        <AssociationConnector Association="Models.FK__Localized__Langu__2F10007B" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="15.4057421875" />
+          <ConnectorPoint PointX="4.791666666666667" PointY="15.4057421875" />
+          <ConnectorPoint PointX="4.958333333333333" PointY="15.4057421875" />
+          <ConnectorPoint PointX="7.5" PointY="15.4057421875" />
+        </AssociationConnector>
+        <AssociationConnector Association="Models.FK__Localized__Langu__3B75D760" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.47576923076923" PointY="16.441793619791667" />
+          <ConnectorPoint PointX="4.8160744349011217" PointY="16.782098823923558" />
+          <ConnectorPoint PointX="4.9339255650988791" PointY="16.899949954121315" />
+          <ConnectorPoint PointX="5.1875" PointY="17.153524389022436" />
+          <ConnectorPoint PointX="5.1875" PointY="17.875" />
+          <ConnectorPoint PointX="9.375" PointY="17.875" />
+          <ConnectorPoint PointX="9.5035744349011217" PointY="18.003574434901122" />
+          <ConnectorPoint PointX="9.6214255650988783" PointY="18.121425565098878" />
+          <ConnectorPoint PointX="9.75" PointY="18.25" />
+        </AssociationConnector>
+        <AssociationConnector Association="Models.FK__Localized__Langu__4AB81AF0" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="16.385254158253204" />
+          <ConnectorPoint PointX="4.8160744349011217" PointY="16.701328593154326" />
+          <ConnectorPoint PointX="4.9339255650988791" PointY="16.819179723352082" />
+          <ConnectorPoint PointX="5.03125" PointY="16.916504158253204" />
+          <ConnectorPoint PointX="5.03125" PointY="17.066793619791667" />
+          <ConnectorPoint PointX="7.041666666666667" PointY="17.066793619791667" />
+          <ConnectorPoint PointX="7.208333333333333" PointY="17.066793619791667" />
+          <ConnectorPoint PointX="9.2916666666666661" PointY="17.066793619791667" />
+          <ConnectorPoint PointX="9.4583333333333339" PointY="17.066793619791667" />
+          <ConnectorPoint PointX="9.4791666666666661" PointY="17.066793619791667" />
+          <ConnectorPoint PointX="9.6458333333333339" PointY="17.066793619791667" />
+          <ConnectorPoint PointX="10.416666666666666" PointY="17.066793619791667" />
+          <ConnectorPoint PointX="10.583333333333334" PointY="17.066793619791667" />
+          <ConnectorPoint PointX="11.625" PointY="17.066793619791667" />
+          <ConnectorPoint PointX="12" PointY="16.691793619791667" />
+        </AssociationConnector>
+        <AssociationConnector Association="Models.FK__Localized__NewsI__49C3F6B7" ManuallyRouted="false">
+          <ConnectorPoint PointX="11.25" PointY="15.189644309895833" />
+          <ConnectorPoint PointX="12" PointY="15.189644309895833" />
+        </AssociationConnector>
+        <AssociationConnector Association="Models.FK__Localized__Paren__2E1BDC42" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.72576923076923" PointY="18.25" />
+          <ConnectorPoint PointX="7.125" PointY="17.850769230769231" />
+          <ConnectorPoint PointX="7.125" PointY="16.137718471354166" />
+          <ConnectorPoint PointX="7.5" PointY="16.137718471354166" />
+        </AssociationConnector>
+        <AssociationConnector Association="Models.FK__News__ParentCate__440B1D61" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="18.307691307692306" />
+          <ConnectorPoint PointX="7.0264413076923056" PointY="18.03125" />
+          <ConnectorPoint PointX="9.1354166666666661" PointY="18.03125" />
+          <ConnectorPoint PointX="9.3020833333333339" PointY="18.03125" />
+          <ConnectorPoint PointX="9.4479166666666661" PointY="18.03125" />
+          <ConnectorPoint PointX="9.6458333333333339" PointY="18.03125" />
+          <ConnectorPoint PointX="10.5" PointY="18.03125" />
+          <ConnectorPoint PointX="10.5" PointY="16.759095052083332" />
+        </AssociationConnector>
+        <AssociationConnector Association="Models.FK__News__UserID__4316F928" ManuallyRouted="false">
+          <ConnectorPoint PointX="9" PointY="22.18730669230769" />
+          <ConnectorPoint PointX="9.5625" PointY="21.62480669230769" />
+          <ConnectorPoint PointX="9.5625" PointY="16.0068232890625" />
+          <ConnectorPoint PointX="9.75" PointY="16.0068232890625" />
+        </AssociationConnector>
+        <AssociationConnector Association="Models.FK__PromotedN__NewsI__5070F446" ManuallyRouted="false">
+          <ConnectorPoint PointX="11.250000000000002" PointY="16.759095052083332" />
+          <ConnectorPoint PointX="11.625" PointY="17.134095052083332" />
+          <ConnectorPoint PointX="11.625" PointY="18.932444661458337" />
+          <ConnectorPoint PointX="12" PointY="18.932444661458337" />
+        </AssociationConnector>
+        <AssociationConnector Association="Models.FK__Users__RoleID__0AD2A005" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="23.297841796875" />
+          <ConnectorPoint PointX="7.5" PointY="23.297841796875" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="Models.aspnet_Membership" Width="1.5" PointX="5.25" PointY="1.125" Height="5.2494108072916674" />
+        <EntityTypeShape EntityType="Models.aspnet_Roles" Width="1.5" PointX="0.75" PointY="2.625" Height="2.1725878906249996" />
+        <EntityTypeShape EntityType="Models.aspnet_Users" Width="1.5" PointX="3" PointY="2.375" Height="2.7494921874999996" />
+        <AssociationConnector Association="Models.FK__aspnet_Me__UserI__4CA06362" >
+          <ConnectorPoint PointX="4.5" PointY="3.74974609375" />
+          <ConnectorPoint PointX="5.25" PointY="3.74974609375" /></AssociationConnector>
+        <AssociationConnector Association="Models.aspnet_UsersInRoles" >
+          <ConnectorPoint PointX="2.25" PointY="3.7112939453125" />
+          <ConnectorPoint PointX="3" PointY="3.7112939453125" /></AssociationConnector></Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

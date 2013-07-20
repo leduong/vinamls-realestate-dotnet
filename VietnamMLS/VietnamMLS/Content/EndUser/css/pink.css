@@ -1,0 +1,26 @@
+/* ------[ Style Adjustments for Dark Pink Color Scheme ]-------- */
+
+
+h3.widgettitle,
+ul.home-right li.title h2.feat-title,
+ul.home-left li.title h2.feat-title,
+ul.home-bottom li.title h2.feat-title,
+h2.feature-title {
+	background:url(images/pink/title-bullet.gif) 0 4px no-repeat;
+	}
+
+a, a:link, a:visited {
+	text-decoration:none;
+	color:#99004C;
+	}
+
+#topnav,
+#topnav li ul {
+	background:#660033;
+	}
+
+#topnav,
+#topnav li ul,
+#topnav li li {
+	border-color: #4D0026;
+	}

@@ -1,0 +1,25 @@
+/* ------[ Style Adjustments for Red Color Scheme ]-------- */
+
+h3.widgettitle,
+ul.home-right li.title h2.feat-title,
+ul.home-left li.title h2.feat-title,
+ul.home-bottom li.title h2.feat-title,
+h2.feature-title {
+	background:url(images/red/title-bullet.gif) 0 4px no-repeat;
+	}
+
+a, a:link, a:visited {
+	text-decoration:none;
+	color:#993333;
+	}
+
+#topnav,
+#topnav li ul {
+	background:#660000;
+	}
+
+#topnav,
+#topnav li ul,
+#topnav li li {
+	border-color: #330000;
+	}

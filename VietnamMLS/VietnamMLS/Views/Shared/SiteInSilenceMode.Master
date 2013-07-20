@@ -1,0 +1,51 @@
+<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<%@ Import Namespace="Helpers" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title><asp:ContentPlaceHolder ID="TitleContent" runat="server" /></title>
+    <link href="../../Content/Site.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div class="page">
+        <div id="header">
+            <div id="title">
+                <h1>Administrator Section</h1>
+            </div>
+             
+            <div id="logindisplay">
+                <% Html.RenderPartial("LogonUserControl"); %>
+            </div> 
+            
+            <div id="menucontainer">
+
+
+                <%-- The custom Html.MenuItem() helper is used to render each menu link --%>
+
+                <ul id="menu">              
+                    <%= Html.MenuItem("Categories", "Index", "ParentCategory")%>
+                    <%= Html.MenuItem("Languages", "Index", "Language")%>
+                    <%= Html.MenuItem("News", "Index", "News")%>
+                    <%= Html.MenuItem("Regions", "Index", "Country")%>
+                    <%= Html.MenuItem("Users", "Index", "Role")%>
+                </ul>
+
+
+            </div>
+        </div>
+
+        <div id="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+
+            <div id="footer">
+                This is our very first MVC Web Application, &copy 2010 The Brokers Team.<br />
+                Built under the ASP.NET MVC 2 RTM, available at <a href="http://www.asp.net/mvc/download/">http://www.asp.net/mvc/download/.</a>
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>

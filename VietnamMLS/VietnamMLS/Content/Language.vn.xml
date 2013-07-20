@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<language>
+  <about>Trang chủ</about>
+  <optioncolor>Chọn màu</optioncolor>
+  <default>Mặc định</default>
+  <blue>Xanh dương</blue>
+  <green>Xanh lá</green>
+  <pink>Hồng</pink>
+  <plum>Tím</plum>
+  <red>Đỏ</red>
+  <rust>Nâu</rust>
+  <turquoise>Lam</turquoise>
+  <news>Tin tức</news>
+  <sitesearch>Tìm kiếm</sitesearch>
+  <entersearchterm>Nhập từ khóa cần tìm</entersearchterm>
+  <search>Tìm</search>
+  <first>Trang đầu</first>
+  <previous>Trang trước</previous>
+  <page>Trang</page>
+  <next>Trang sau</next>
+  <last>Trang cuối</last>
+  <searchnull>Không tìm thấy trong tin nào: </searchnull>
+  <searchresult>Kết quả tìm kiếm</searchresult>
+  <othernews>Tin tức khác</othernews>
+  <categories>Danh mục</categories>
+  <tagnews>Tin liên quan</tagnews>
+  <lastnews>Tin mới</lastnews>
+
+  <Monday>Thứ Hai</Monday>
+  <Tuesday>Thứ Ba</Tuesday>
+  <Wednesday>Thứ Tư</Wednesday>
+  <Thursday>Thứ Năm</Thursday>
+  <Friday>Thứ Sáu</Friday>
+  <Saturday>Thứ Bảy</Saturday>
+  <Sunday>Chủ Nhật</Sunday>
+</language>

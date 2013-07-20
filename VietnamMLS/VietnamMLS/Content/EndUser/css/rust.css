@@ -1,0 +1,25 @@
+/* ------[ Style Adjustments for Orange Color Scheme ]-------- */
+
+h3.widgettitle,
+ul.home-right li.title h2.feat-title,
+ul.home-left li.title h2.feat-title,
+ul.home-bottom li.title h2.feat-title,
+h2.feature-title {
+	background:url(images/rust/title-bullet.gif) 0 4px no-repeat;
+	}
+
+a, a:link, a:visited {
+	text-decoration:none;
+	color:#804C1A;
+	}
+
+#topnav,
+#topnav li ul {
+	background:#804000;
+	}
+
+#topnav,
+#topnav li ul,
+#topnav li li {
+	border-color: #4D2600;
+	}

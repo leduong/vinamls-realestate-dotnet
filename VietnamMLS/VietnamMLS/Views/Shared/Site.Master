@@ -1,0 +1,243 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+<%@ Import Namespace="Helpers" %>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+
+    <!--Client Validation begin-->
+    <script src="../../Scripts/MicrosoftAjax.js" type="text/javascript"></script>
+    <script src="../../Scripts/MicrosoftMvcAjax.js" type="text/javascript"></script>
+    <script src="../../Scripts/MicrosoftMvcValidation.js" type="text/javascript"></script>
+    <%Html.EnableClientValidation(); %>
+    <!--Client Validation end-->
+
+    <%= Html.Telerik().StyleSheetRegistrar()
+            .DefaultGroup(group => group.Add("telerik.common.css")
+                                        .Add("telerik.windows7.css"))
+    %>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    
+    <title>
+        <asp:ContentPlaceHolder ID="TitleContent" runat="server" />
+        <%= ViewData["Message"] %>
+    </title>
+    
+    <link rel="stylesheet" type="text/css" media="all" href="../../Content/style.css" />
+    <link rel="Stylesheet" type="text/css" href="../../Content/smoothness/jquery-ui-1.7.1.custom.css" />
+    <!--[if IE 7]><link rel="stylesheet" href=""../../Content/css/ie.css" type="text/css" media="screen, projection" /><![endif]-->
+    <link rel="stylesheet" type="text/css" href="../../Content/markitup/skins/markitup/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../Content/markitup/sets/default/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../Content/superfish.css" media="screen" />
+   
+    <!--[if IE]>
+		<style type="text/css">
+		  .clearfix {
+		    zoom: 1;     /* triggers hasLayout */
+		    display: block;     /* resets display for IE/Win */
+		    }  /* Only IE can see inside the conditional comment
+		    and read this CSS rule. Don't ever use a normal HTML
+		    comment inside the CC or it will close prematurely. */
+		</style>
+	<![endif]-->
+
+    <script type="text/javascript" src="../../Scripts/js/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="../../Scripts/js/jquery-ui-1.7.1.custom.min.js"></script>
+    <script type="text/javascript" src="../../Scripts/js/hoverIntent.js"></script>
+    <script type="text/javascript" src="../../Scripts/js/superfish.js"></script>
+
+    <%--<script type="text/javascript">
+        jQuery(function() {
+            jQuery('ul.sf-menu').superfish();
+        });
+
+    </script>--%>
+
+    <script type="text/javascript" src="../../Scripts/js/excanvas.pack.js"></script>
+    <script type="text/javascript" src="../../Scripts/js/jquery.flot.pack.js"></script>
+    <script type="text/javascript" src="../../Content/markitup/jquery.markitup.pack.js"></script>
+    <script type="text/javascript" src="../../Content/markitup/sets/default/set.js"></script>
+    <script type="text/javascript" src="../../Scripts/js/custom.js"></script>
+
+</head>
+<body>
+    <div class="container" id="container">
+        <div id="header">
+            <div id="profile_info">
+			    <img src="../../Content/img/avatar.jpg" id="avatar" alt="avatar" />
+			    <div id="logindisplay">
+                    <% Html.RenderPartial("LogOnUserControl"); %>
+                </div> 
+		    </div>
+            <div id="logo">
+                <h1>
+                    <a href="/">AdmintTheme</a></h1>
+            </div>
+        </div>
+        <div id="content">
+            <div id="top_menu">
+            <%if (HttpContext.Current.User.IsInRole("admin")) {%>
+                <ul class="sf-menu">
+               
+                    <li class="current"><a href="#">Categories</a>
+                        <ul>
+                         <%=Html.MenuItem("Categories List", "Index", "Categories")%>
+                        <%=Html.MenuItem("Localized Categories List", "Index", "LocalizedCategories")%>
+                            <%--<li><a href="../../Admin/LocalizedCategories">Localized Categories</a> </li>--%>
+                             <%=Html.MenuItem("Parent Categories List", "Index", "ParentCategories")%>
+                            <%--<li class="current"><a href="../../Admin/ParentCategories">Parent Categories</a> </li>--%>
+                            <%=Html.MenuItem("Localized Parent Categories List", "Index", "LocalizedParentCategories")%>
+                            <%--<li><a href="../../Admin/LocalizedParentCategories">Localized Parent Categories</a> </li>--%>
+                        </ul>
+                    </li>
+                    <li><a href="#">Languages</a> 
+                         <ul>
+                         <%=Html.MenuItem("Languages List", "Index", "Language")%>
+                         </ul>
+                    </li>
+                    <li><a href="#">News</a>
+                        <ul>
+                            <%=Html.MenuItem("News List", "Index", "News")%>
+                            <%--<li><a href="../../Admin/News">News List</a> </li>--%>
+                            <%=Html.MenuItem("Localized News List", "Index", "LocalizedNews")%>
+                            <%--<li><a href="../../Admin/LocalizedNews">Localize News List</a> </li>--%>
+                            <%=Html.MenuItem("Promoted News List", "Index", "PromotedNews")%>
+                        </ul>
+                    </li>
+                    <li><a href="#">Regions</a>
+                        <ul>
+                            <%=Html.MenuItem("Countries List", "Index", "Country")%>
+                            <%--<li><a href="../../Admin/Country">Countries List</a> </li>--%>
+                            <%=Html.MenuItem("Cities List", "Index", "City")%>
+                            <%--<li><a href="../../Admin/City">Cities List</a> </li>--%>
+                            <%=Html.MenuItem("Localized Cities List", "Index", "LocalizedCities")%>
+                            <%--<li><a href="../../Admin/LocalizedCities">Localize Cities List</a> </li>--%>
+                        </ul>
+                    </li>
+                    <li><a href="#">User</a>
+                        <ul>
+                        <%=Html.MenuItem("User List", "Index", "Account")%>
+                            <%--<li><a href="../../Admin/User">User List</a> </li>--%>
+                            <%--<%=Html.MenuItem("Roles List", "Index", "Role")%>--%>
+                            <%--<li><a href="../../Admin/Role">Roles List</a> </li>--%>
+                        </ul>
+                    </li>
+                </ul>
+                <%}%>
+                <%else { %>
+                    <ul class="sf-menu">
+                    <li><a href="#">News</a>
+                        <ul>
+                            <%=Html.MenuItem("News List", "Index", "News")%>
+                            <%--<li><a href="../../Admin/News">News List</a> </li>--%>
+                            <%=Html.MenuItem("Localized News List", "Index", "LocalizedNews")%>
+                            <%--<li><a href="../../Admin/LocalizedNews">Localize News List</a> </li>--%>
+                        </ul>
+                    </li>
+                    <li><a href="#">My Account</a>
+                        <ul>
+                            <%=Html.MenuItem("Account Information", "Details", "Account")%>
+                            <%=Html.MenuItem("Change Password", "Edit", "Account")%>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <%}%>
+                
+                
+            </div>
+            <div id="content_main" class="clearfix">
+                <div id="main_panel_container" class="left">
+                    <div id="dashboard">
+                                <h2 class="ico_mug">
+                                    <%= Html.Encode(ViewData["Message"]) %>
+                                </h2>
+                            <div id="main" class="clearfix">
+                                
+                                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                                </asp:ContentPlaceHolder>
+                            </div>
+                        
+                    </div>
+                    <div id="shortcuts" class="clearfix">
+                        <h2 class="ico_mug">
+                            Panel shortcuts</h2>
+                        <ul>
+                            <li class="first_li"><a href="">
+                                <img src="/Content/img/theme.jpg" alt="themes" /><span>News</span></a></li>
+                            <li><a href="">
+                                <img src="/Content/img/statistic.jpg" alt="statistics" /><span>Regions</span></a></li>
+                            <li><a href="">
+                                <img src="/Content/img/ftp.jpg" alt="FTP" /><span>Categories</span></a></li>
+                            <li><a href="">
+                                <img src="/Content/img/users.jpg" alt="Users" /><span>User</span></a></li>
+                            <li><a href="">
+                                <img src="/Content/img/comments.jpg" alt="Comments" /><span>Languages</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="sidebar" class="right">
+                    <h2 class="ico_mug">
+                        Sidebar</h2>
+                    <ul id="menu">
+                        <%--<%=Html.MenuItem("Testing","Index","ParentCategory") %>--%>
+                        <li><a href="#" class="ico_posts">News</a>
+                            <ul>
+                                <%=Html.MenuItem("News List", "Index", "News")%>
+                                <%=Html.MenuItem("Add News", "Create", "News")%>
+                            </ul>
+                            <a href="#" class="ico_page">Categories</a>
+                            <ul>
+                                <%=Html.MenuItem("Categories List", "Index", "Categories")%>                                
+                                <%=Html.MenuItem("Add Categories", "Create", "Categories")%>                                                                
+                                <%=Html.MenuItem("Parent Categories List", "Index", "ParentCategories")%>                                
+                                <%=Html.MenuItem("Add Parent Categories", "Create", "ParentCategories")%>                                
+                            </ul>
+                            <a href="#" class="ico_user">User</a>
+                            <ul>                             
+                                <%=Html.MenuItem("User List", "Index", "Account")%>
+                                <%=Html.MenuItem("Add User", "Register", "Account")%>
+                            </ul>
+                            <a href="#" class="ico_settings">Regions</a>
+                            <ul>
+                                <%=Html.MenuItem("Countries List", "Index", "Country")%>
+                                <%=Html.MenuItem("Add Countries", "Create", "Country")%>
+                                <%=Html.MenuItem("Cities List", "Index", "City")%>
+                                <%=Html.MenuItem("Add Cities", "Create", "City")%>
+                            </ul>
+                            <a href="#" class="ico_settings">Languages</a>
+                            <ul>
+                                <%=Html.MenuItem("Languages List", "Index", "Language")%>
+                                <%=Html.MenuItem("Add Languages", "Create", "Language")%>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="section">
+                <%--<div id="main">
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>--%>
+            </div>
+        </div>
+        <div id="footer" class="section">
+            Nguyễn Hữu Việt Long, Lê Dân, Thái Hoàng Duy, Bùi Ngọc San, Nhật Tân, Viết Tân
+            This is our very first MVC Web Application, construct @ iWPL - InfoworldSchool<br />
+            Built under the ASP.NET MVC 2 RTM, available for download at <a href="http://www.asp.net/mvc/download/">
+                http://www.asp.net/mvc/download/.</a>
+        </div>
+        <div id="Div1" class="section">
+            <p class="left">
+                nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn</p>
+        </div>
+    </div>
+
+    
+<%= Html.Telerik().ScriptRegistrar() %>
+
+</body>
+</html>

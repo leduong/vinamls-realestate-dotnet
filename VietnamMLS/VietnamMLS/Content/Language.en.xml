@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<language>
+  <about>Home</about>
+  <optioncolor>Color Options</optioncolor>
+  <default>Default</default>
+  <blue>Blue</blue>
+  <green>Green</green>
+  <pink>Pink</pink>
+  <plum>Plum</plum>
+  <red>Red</red>
+  <rust>Rust</rust>
+  <turquoise>Turquoise</turquoise>
+  <news>News</news>
+  <sitesearch>Site Search</sitesearch>
+  <entersearchterm>Enter search term</entersearchterm>
+  <search>Search</search>
+  <first>First</first>
+  <previous>Previous</previous>
+  <page>Page</page>
+  <next>Next</next>
+  <last>Last</last>
+  <searchnull>No news found for:</searchnull>
+  <searchresult>Search Results</searchresult>
+  <othernews>Other News</othernews>
+  <categories>Categories</categories>
+  <tagnews>Tag News</tagnews>
+  <lastnews>Latest News</lastnews>
+  
+</language>

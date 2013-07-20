@@ -1,0 +1,25 @@
+/* ------[ Style Adjustments for Plum Color Scheme ]-------- */
+
+h3.widgettitle,
+ul.home-right li.title h2.feat-title,
+ul.home-left li.title h2.feat-title,
+ul.home-bottom li.title h2.feat-title,
+h2.feature-title {
+	background:url(images/plum/title-bullet.gif) 0 4px no-repeat;
+	}
+
+a, a:link, a:visited {
+	text-decoration:none;
+	color:#993399;
+	}
+
+#topnav,
+#topnav li ul {
+	background:#660066;
+	}
+
+#topnav,
+#topnav li ul,
+#topnav li li {
+	border-color: #330033;
+	}
